@@ -1,9 +1,10 @@
-$(document).ready(function() {
+  $(document).ready(function() {
 
   var thermostat = new Thermostat();
 
   var updateTemp = function() {
     $('#temperature').text(thermostat.currentTemperature());
+    updateColorDisplay()
   };
 
   var updatePSMDisplay = function() {
@@ -22,30 +23,22 @@ $(document).ready(function() {
     };
   };
 
-  updateColorDisplay()
   updateTemp()
-  updatePSMDisplay()
 
 
   $('#temperature-up').on('click', function() {
     thermostat.up();
     updateTemp()
-    updateColorDisplay()
-
   })
 
   $('#temperature-down').on('click', function() {
     thermostat.down();
     updateTemp()
-    updateColorDisplay()
-
   })
 
   $('#temperature-reset').on('click', function() {
     thermostat.resetTemp();
     updateTemp()
-    updateColorDisplay()
-
   })
 
 
