@@ -24,7 +24,7 @@
   };
 
   updateTemp()
-
+  updatePSMDisplay()
 
   $('#temperature-up').on('click', function() {
     thermostat.up();
