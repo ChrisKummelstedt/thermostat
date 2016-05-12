@@ -9,9 +9,16 @@ function Thermostat(){
 
 }
 
+Thermostat.prototype.powerSaveDisplay = function (){
+  if (this.powerSaveMode){
+    return "on"
+  };
+  return "off"
+};
+
 Thermostat.prototype.currentColor = function (){
   return this.tempColor;
-}
+};
 
 Thermostat.prototype.powerSaveOff = function (){
   this.powerSaveMode = false;
@@ -19,6 +26,8 @@ Thermostat.prototype.powerSaveOff = function (){
 
 Thermostat.prototype.resetTemp = function (){
   this._temperature = 20;
+  this.changeTempColor();
+
 };
 
 Thermostat.prototype.powerSaveOn = function (){
